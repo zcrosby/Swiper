@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: January 13, 2018
+ * Released on: January 19, 2018
  */
 
 import { $, add, addClass, append, attr, children, closest, css, data, each, eq, find, hasClass, html, index, is, next, nextAll, off, offset, on, outerHeight, outerWidth, parent, parents, prepend, prev, prevAll, remove, removeAttr, removeClass, styles, text, toggleClass, transform, transition, transitionEnd, trigger } from 'dom7/dist/dom7.modular';
@@ -2383,7 +2383,7 @@ var defaults = {
   breakpoints: undefined,
 
   // Slides grid
-  spaceBetween: 0,
+  spaceBetween: 25,
   slidesPerView: 1,
   slidesPerColumn: 1,
   slidesPerColumnFill: 'column',
@@ -3223,10 +3223,6 @@ const Keyboard = {
       if (swiper.$el.parents(`.${swiper.params.slideClass}`).length > 0 && swiper.$el.parents(`.${swiper.params.slideActiveClass}`).length === 0) {
         return undefined;
       }
-      const windowScroll = {
-        left: win.pageXOffset,
-        top: win.pageYOffset,
-      };
       const windowWidth = win.innerWidth;
       const windowHeight = win.innerHeight;
       const swiperOffset = swiper.$el.offset();
@@ -3240,8 +3236,8 @@ const Keyboard = {
       for (let i = 0; i < swiperCoord.length; i += 1) {
         const point = swiperCoord[i];
         if (
-          point[0] >= windowScroll.left && point[0] <= windowScroll.left + windowWidth &&
-            point[1] >= windowScroll.top && point[1] <= windowScroll.top + windowHeight
+          point[0] >= 0 && point[0] <= windowWidth &&
+          point[1] >= 0 && point[1] <= windowHeight
         ) {
           inView = true;
         }
