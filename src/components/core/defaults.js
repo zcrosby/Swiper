@@ -35,7 +35,7 @@ export default {
   breakpoints: undefined,
 
   // Slides grid
-  spaceBetween: 0,
+  spaceBetween: 25,
   slidesPerView: 1,
   slidesPerColumn: 1,
   slidesPerColumnFill: 'column',
