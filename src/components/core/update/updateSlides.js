@@ -58,6 +58,7 @@ export default function () {
     }
   }
 
+  //console.log('params.spaceBetween ', params.spaceBetween);
   // Calc slides
   let slideSize;
   const slidesPerColumn = params.slidesPerColumn;
@@ -151,7 +152,7 @@ export default function () {
     $wrapperEl.css({ width: `${swiper.virtualSize + params.spaceBetween}px` });
   }
   if (!Support.flexbox || params.setWrapperSize) {
-    if (swiper.isHorizontal()) $wrapperEl.css({ width: `${swiper.virtualSize + params.spaceBetween}px` });
+    if (swiper.isHorizontal()) $wrapperEl.css({ width: `${swiper.virtualSize + params.spaceBetween + params.addedWidth}px` });
     else $wrapperEl.css({ height: `${swiper.virtualSize + params.spaceBetween}px` });
   }
 
